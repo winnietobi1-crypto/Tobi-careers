@@ -1,0 +1,430 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Status | Tobi Careers</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f7fc;
+            color: #183153;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(120deg, #12345a, #1769aa);
+            color: white;
+            text-align: center;
+            padding: 30px 15px;
+        }
+
+        header h1 {
+            font-size: 30px;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            color: #dceeff;
+        }
+
+        nav {
+            background: white;
+            padding: 15px 10px;
+            text-align: center;
+            box-shadow: 0 2px 8px #0000000d;
+        }
+
+        nav a {
+            display: inline-block;
+            color: #12345a;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 5px 10px;
+            font-size: 14px;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #0879c9;
+        }
+
+        .page-heading {
+            text-align: center;
+            padding: 35px 15px 10px;
+        }
+
+        .page-heading .icon {
+            width: 65px;
+            height: 65px;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            background: #dceeff;
+            color: #1769aa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 29px;
+        }
+
+        .page-heading h2 {
+            color: #12345a;
+            font-size: 27px;
+            margin-bottom: 8px;
+        }
+
+        .page-heading p {
+            color: #65758a;
+            max-width: 550px;
+            margin: auto;
+        }
+
+        .container {
+            max-width: 650px;
+            margin: 25px auto 45px;
+            padding: 30px;
+            background: white;
+            border-radius: 14px;
+            box-shadow: 0 5px 22px #12345a12;
+        }
+
+        .form-title {
+            font-size: 19px;
+            color: #12345a;
+            margin-bottom: 8px;
+        }
+
+        .form-description {
+            color: #718096;
+            font-size: 14px;
+            margin-bottom: 22px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 9px;
+            color: #183153;
+        }
+
+        .input-wrapper {
+            position: relative;
+        }
+
+        .input-wrapper span {
+            position: absolute;
+            left: 14px;
+            top: 13px;
+            color: #7a91aa;
+            font-size: 17px;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px 14px 14px 43px;
+            border: 1px solid #cbd8e6;
+            border-radius: 8px;
+            font-size: 15px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            border-color: #1769aa;
+            box-shadow: 0 0 0 3px #1769aa18;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 20px;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            background: #1769aa;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #104c80;
+            transform: translateY(-1px);
+        }
+
+        .privacy-note {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            background: #eef6ff;
+            color: #52677e;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 22px;
+            font-size: 13px;
+        }
+
+        .privacy-note span {
+            color: #1769aa;
+            font-size: 18px;
+        }
+
+        #result {
+            display: none;
+            margin-top: 20px;
+            padding: 16px;
+            border-radius: 8px;
+            line-height: 1.6;
+            overflow-wrap: anywhere;
+        }
+
+        .steps-section {
+            margin-top: 35px;
+            padding-top: 25px;
+            border-top: 1px solid #e6edf5;
+        }
+
+        .steps-section h3 {
+            text-align: center;
+            color: #12345a;
+            margin-bottom: 25px;
+        }
+
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            gap: 8px;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            top: 18px;
+            left: 12%;
+            right: 12%;
+            height: 3px;
+            background: #dceeff;
+        }
+
+        .step {
+            flex: 1;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: #dceeff;
+            color: #1769aa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            font-size: 17px;
+            font-weight: bold;
+        }
+
+        .step p {
+            font-size: 12px;
+            color: #53657a;
+            font-weight: bold;
+        }
+
+        .help-box {
+            margin-top: 30px;
+            background: #fff5df;
+            border-left: 4px solid #e6b422;
+            padding: 16px;
+            border-radius: 6px;
+            font-size: 14px;
+            color: #685522;
+        }
+
+        .help-box strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        footer {
+            background: #12345a;
+            color: white;
+            text-align: center;
+            padding: 23px 15px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 25px;
+            }
+
+            nav a {
+                margin: 6px;
+            }
+
+            .container {
+                margin: 20px 12px 35px;
+                padding: 22px 17px;
+            }
+
+            .page-heading h2 {
+                font-size: 23px;
+            }
+
+            .timeline {
+                gap: 2px;
+            }
+
+            .step p {
+                font-size: 10px;
+            }
+
+            .step-icon {
+                width: 34px;
+                height: 34px;
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Tobi Careers</h1>
+        <p>Your career journey starts here.</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="jobs.html">Jobs</a>
+        <a href="apply.html">Apply</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="status.html" class="active">Application Status</a>
+    </nav>
+
+    <section class="page-heading">
+        <div class="icon">✓</div>
+        <h2>Application Status</h2>
+        <p>
+            Stay informed about your recruitment journey.
+            Check the progress of your job application below.
+        </p>
+    </section>
+
+    <main class="container">
+
+        <h3 class="form-title">Track Your Application</h3>
+
+        <p class="form-description">
+            Enter the email address you used when submitting
+            your job application.
+        </p>
+
+        <form id="statusForm">
+
+            <label for="appEmail">Application Email Address</label>
+
+            <div class="input-wrapper">
+                <span>✉</span>
+                <input
+                    type="email"
+                    id="appEmail"
+                    placeholder="example@email.com"
+                    required
+                >
+            </div>
+
+            <button type="submit">Check My Status →</button>
+
+        </form>
+
+        <div id="result" aria-live="polite"></div>
+
+        <div class="privacy-note">
+            <span>🔒</span>
+            <p>
+                Your application information should only be accessed
+                through the secure Tobi Careers application system.
+            </p>
+        </div>
+
+        <section class="steps-section">
+
+            <h3>Recruitment Process</h3>
+
+            <div class="timeline">
+
+                <div class="step">
+                    <div class="step-icon">✓</div>
+                    <p>Applied</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-icon">2</div>
+                    <p>Review</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-icon">3</div>
+                    <p>Shortlisting</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-icon">4</div>
+                    <p>Decision</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <div class="help-box">
+            <strong>Need assistance?</strong>
+            If you have questions about your application,
+            please contact the Tobi Careers recruitment team.
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Tobi Careers. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const statusForm = document.getElementById("statusForm");
+        const result = document.getElementById("result");
+
+        statusForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const email = document.getElementById("appEmail")
+                .value.trim();
+
+            result.style.display = "block";
+            result.style.background = "#fff5df";
+            result.style.color = "#685522";
+
+            result.textContent =
+                "Your email has been entered successfully. " +
+                "Live application status checking will be connected " +
+                "to the Tobi Careers database in the next step.";
+        });
+    </script>
+
+</body>
+</html>

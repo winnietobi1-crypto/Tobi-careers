@@ -1,0 +1,2956 @@
+
+/* TOBI CAREERS - MAIN STYLESHEET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --navy: #153451;
+    --blue: #3983C6;
+    --sky-blue: #E8F4FF;
+    --pink: #F9DCE8;
+    --soft-pink: #FFF2F7;
+    --yellow: #FFF0BF;
+    --white: #FFFFFF;
+    --text: #34465A;
+    --muted: #6B7C8F;
+    --border: #E1E8EF;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--white);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+.container {
+    width: 90%;
+    max-width: 1150px;
+    margin: auto;
+}
+
+/* HEADER AND NAVIGATION */
+
+.site-header {
+    background: var(--white);
+    box-shadow: 0 2px 12px rgba(21, 52, 81, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    min-height: 78px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 23px;
+    font-weight: bold;
+    color: var(--navy);
+    white-space: nowrap;
+}
+
+.logo-icon {
+    background: var(--pink);
+    color: var(--navy);
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 17px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+nav a {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--navy);
+    transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    color: var(--blue);
+}
+
+nav .nav-button {
+    background: var(--navy);
+    color: var(--white);
+    padding: 10px 17px;
+    border-radius: 7px;
+}
+
+nav .nav-button:hover {
+    background: var(--blue);
+    color: var(--white);
+}
+
+.menu-toggle {
+    display: none;
+    background: var(--sky-blue);
+    color: var(--navy);
+    border: none;
+    border-radius: 7px;
+    padding: 7px 12px;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+
+
+/* HOMEPAGE HERO */
+
+.hero {
+    position: relative;
+    isolation: isolate;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.48),
+            rgba(0, 0, 0, 0.12),
+            rgba(0, 0, 0, 0.05)
+        ),
+        url("images/background.jpg");
+background-size: cover, auto 100%;
+background-position: center, right center;
+    background-repeat: no-repeat;
+
+    min-height: 620px;
+    display: flex;
+    align-items: center;
+    padding: 80px 0;
+}
+
+
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 55px;
+    align-items: center;
+}
+
+.eyebrow {
+    color: var(--blue);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 14px;
+}
+
+.hero h1 {
+    font-size: clamp(35px, 4.5vw, 56px);
+    color: var(--navy);
+    line-height: 1.2;
+    margin-bottom: 22px;
+}
+
+.hero h1 span {
+    color: var(--blue);
+}
+
+.hero-description {
+    font-size: 16px;
+    max-width: 540px;
+    color: var(--muted);
+    margin-bottom: 28px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 23px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: var(--navy);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background: var(--blue);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: var(--white);
+    color: var(--navy);
+    border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+    background: var(--yellow);
+}
+
+.btn-light {
+    background: var(--white);
+    color: var(--navy);
+}
+
+.btn-light:hover {
+    background: var(--yellow);
+}
+
+.small-note {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 23px;
+}
+
+.hero-card {
+    background: var(--white);
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 15px 45px rgba(21, 52, 81, 0.10);
+    border-top: 5px solid var(--pink);
+}
+
+.hero-illustration {
+    width: 85px;
+    height: 85px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--yellow);
+    border-radius: 22px;
+    font-size: 43px;
+    margin-bottom: 20px;
+}
+
+.hero-card h2 {
+    color: var(--navy);
+    font-size: 23px;
+    margin-bottom: 10px;
+}
+
+.hero-card p {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 22px;
+}
+
+.feature-item {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin: 12px 0;
+    font-size: 14px;
+}
+
+.feature-item span {
+    background: var(--sky-blue);
+    color: var(--blue);
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* FEATURE SECTION */
+
+.section-padding {
+    padding: 75px 0;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 40px;
+}
+
+.section-heading h2 {
+    color: var(--navy);
+    font-size: 30px;
+    line-height: 1.3;
+    margin-bottom: 13px;
+}
+
+.section-heading > p:last-child {
+    color: var(--muted);
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.feature-card {
+    padding: 28px;
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    background: var(--white);
+    transition: 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(21, 52, 81, 0.08);
+}
+
+.feature-icon {
+    width: 58px;
+    height: 58px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 27px;
+    margin-bottom: 20px;
+}
+
+.blue-icon {
+    background: var(--sky-blue);
+}
+
+.pink-icon {
+    background: var(--pink);
+}
+
+.yellow-icon {
+    background: var(--yellow);
+}
+
+.feature-card h3 {
+    color: var(--navy);
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 18px;
+}
+
+.feature-card a {
+    color: var(--blue);
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* CALL TO ACTION */
+
+.call-to-action {
+    background: var(--navy);
+    color: var(--white);
+    padding: 45px 0;
+}
+
+.cta-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.cta-content h2 {
+    font-size: 27px;
+    margin-bottom: 8px;
+}
+
+.cta-content p {
+    color: #DCE8F3;
+}
+
+/* FOOTER */
+
+.site-footer {
+    background: #0D2238;
+    color: var(--white);
+    padding: 25px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.footer-content p {
+    font-size: 13px;
+    color: #DCE8F3;
+}
+
+/* GENERAL STYLES FOR FUTURE PAGES */
+
+.page-banner {
+    background: linear-gradient(
+        120deg,
+        var(--sky-blue),
+        var(--pink)
+    );
+    text-align: center;
+    padding: 55px 15px;
+}
+
+.page-banner h1 {
+    color: var(--navy);
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.page-banner p {
+    color: var(--muted);
+}
+
+.content-section {
+    padding: 55px 0;
+}
+
+.content-section h2,
+.content-section h3 {
+    color: var(--navy);
+    margin-bottom: 15px;
+}
+
+.content-section p {
+    margin-bottom: 15px;
+}
+
+.form-card {
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 30px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: var(--white);
+    box-shadow: 0 8px 25px rgba(21, 52, 81, 0.06);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    color: var(--navy);
+    margin-bottom: 7px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #CAD5E0;
+    border-radius: 7px;
+    background: var(--white);
+    color: var(--text);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: 2px solid var(--blue);
+    border-color: var(--blue);
+}
+
+.form-message {
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 7px;
+}
+
+.success-message {
+    background: #E3F6E9;
+    color: #216A38;
+}
+
+.error-message {
+    background: #FCE5E5;
+    color: #A52626;
+}
+
+.job-card {
+    padding: 24px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin-bottom: 20px;
+    background: var(--white);
+}
+
+.job-card h3 {
+    color: var(--navy);
+    margin-bottom: 8px;
+}
+
+.job-meta {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.notice {
+    background: var(--yellow);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    color: var(--navy);
+    font-size: 14px;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 950px) {
+    .nav-container {
+        flex-wrap: wrap;
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 10px 0;
+    }
+
+    nav.show {
+        display: flex;
+    }
+
+    nav a {
+        padding: 10px;
+    }
+
+    nav .nav-button {
+        text-align: center;
+        margin-top: 5px;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .hero {
+        padding: 55px 0;
+    }
+
+    .hero-text {
+        text-align: center;
+    }
+
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-actions {
+        justify-content: center;
+    }
+
+    .hero-card {
+        max-width: 600px;
+        margin: auto;
+        width: 100%;
+    }
+}
+
+@media (max-width: 650px) {
+    .container {
+        width: 92%;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-padding {
+        padding: 50px 0;
+    }
+
+    .section-heading h2 {
+        font-size: 25px;
+    }
+
+    .page-banner h1 {
+        font-size: 29px;
+    }
+
+    .form-card {
+        padding: 20px;
+    }
+
+    .cta-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cta-content h2 {
+        font-size: 23px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+/* Application Status image only */
+#status-page-image {
+    display: block;
+    width: 300px;
+    max-width: 80%;
+    height: 180px;
+    object-fit: cover;
+    object-position: center;
+    border: 3px solid #87CEEB;
+    border-radius: 18px;
+    margin: 20px auto;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.18);
+}
+
+/* Status image on small screens */
+@media screen and (max-width: 500px) {
+    #status-page-image {
+        width: 250px;
+        height: 150px;
+    }
+}
+
+/* =========================================
+   TOBI CAREERS - PROFESSIONAL LOGO STYLING
+   ========================================= */
+
+/* Keep the header neat and vertically aligned */
+.site-header .nav-container {
+    min-height: 84px;
+}
+
+/* Align the logo image and website name */
+.site-header .logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    flex-shrink: 0;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.4px;
+    color: var(--navy);
+    white-space: nowrap;
+    transition: color 0.25s ease;
+}
+
+/* Give the actual logo image a polished finish */
+.site-header .site-logo {
+    display: block;
+    width: 54px;
+    height: 54px;
+    flex: 0 0 54px;
+    object-fit: contain;
+    object-position: center;
+    padding: 3px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    box-shadow: 0 4px 12px rgba(21, 52, 81, 0.10);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+/* Refined hover effect */
+.site-header .logo:hover {
+    color: var(--blue);
+}
+
+.site-header .logo:hover .site-logo {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 18px rgba(21, 52, 81, 0.16);
+}
+
+/* Keep the brand name properly aligned */
+.site-header .logo span {
+    display: inline-block;
+    line-height: 1.2;
+}
+
+/* Tablet and mobile adjustments */
+@media (max-width: 950px) {
+    .site-header .nav-container {
+        min-height: 74px;
+    }
+
+    .site-header .logo {
+        gap: 10px;
+        font-size: 21px;
+    }
+
+    .site-header .site-logo {
+        width: 48px;
+        height: 48px;
+        flex-basis: 48px;
+        border-radius: 11px;
+    }
+}
+
+/* Extra-small phone screens */
+@media (max-width: 380px) {
+    .site-header .logo {
+        gap: 8px;
+        font-size: 18px;
+    }
+
+    .site-header .site-logo {
+        width: 43px;
+        height: 43px;
+        flex-basis: 43px;
+    }
+}
+
+/* =====================================
+   TOBI CAREERS - WHITE HERO TEXT
+===================================== */
+
+.hero-text {
+    color: #FFFFFF !important;
+}
+
+.hero-text .eyebrow {
+    color: #FFFFFF !important;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.hero-text h1 {
+    color: #FFFFFF !important;
+    font-size: 52px;
+    font-weight: 900;
+    line-height: 1.15;
+    text-shadow: 2px 3px 8px rgba(0, 0, 0, 0.75);
+}
+
+.hero-text h1 span {
+    color: #FFFFFF !important;
+    font-weight: 900;
+}
+
+.hero-text .hero-description {
+    color: #FFFFFF !important;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.8;
+    text-shadow: 1px 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+.hero-text .small-note {
+    color: #FFFFFF !important;
+    font-weight: 700;
+    text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+/* HERO TEXT ON SMALL SCREENS */
+
+@media (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 36px;
+    }
+
+    .hero-text .hero-description {
+        font-size: 15px;
+    }
+}
+
+/* =================================
+   HERO WELCOME SLIDESHOW
+================================= */
+
+.hero-slideshow {
+    position: relative;
+    min-height: 190px;
+    margin-bottom: 20px;
+}
+
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    animation: heroFade 15s infinite;
+}
+
+.hero-slide h1 {
+    color: #FFFFFF !important;
+    font-size: 52px;
+    font-weight: 900;
+    line-height: 1.15;
+    text-shadow: 2px 3px 8px rgba(0, 0, 0, 0.8);
+}
+
+.hero-slide p {
+    color: #FFFFFF !important;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.7;
+    text-shadow: 1px 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+.slide-one {
+    animation-delay: 0s;
+}
+
+.slide-two {
+    animation-delay: 5s;
+}
+
+.slide-three {
+    animation-delay: 10s;
+}
+
+@keyframes heroFade {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    8% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    28% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    36% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-slide h1 {
+        font-size: 34px;
+    }
+
+    .hero-slide p {
+        font-size: 15px;
+    }
+}
+
+/* =====================================
+   TOBI CAREERS - HERO JOB SEARCH BAR
+===================================== */
+
+.hero-search {
+    width: 100%;
+    max-width: 1050px;
+    margin: 35px 0 25px;
+    padding: 22px;
+    background: rgba(255, 255, 255, 0.96);
+    border-radius: 14px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.22);
+    position: relative;
+    z-index: 2;
+}
+
+.job-search-form {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr 1.2fr auto;
+    gap: 15px;
+    align-items: end;
+}
+
+.search-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.search-field label {
+    color: #243B63;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.search-field input,
+.search-field select {
+    width: 100%;
+    min-height: 48px;
+    padding: 12px;
+    border: 1px solid #D9E1EC;
+    border-radius: 8px;
+    background: #FFFFFF;
+    color: #26354A;
+    font-size: 14px;
+    outline: none;
+}
+
+.search-field input:focus,
+.search-field select:focus {
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px rgba(50, 120, 200, 0.12);
+}
+
+.job-search-form button {
+    min-height: 48px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+/* TABLET AND MOBILE */
+
+@media (max-width: 900px) {
+    .job-search-form {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .job-search-form button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 550px) {
+    .hero-search {
+        padding: 16px;
+        margin-top: 25px;
+    }
+
+    .job-search-form {
+        grid-template-columns: 1fr;
+    }
+
+    .job-search-form button {
+        width: 100%;
+    }
+}
+
+/* =========================================
+   TOBI CAREERS - PORTRAIT FASHION CAROUSEL
+========================================= */
+
+.fashion-gallery {
+    padding: 70px 0;
+    background: #ffffff;
+}
+
+.fashion-gallery .section-heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.fashion-gallery .section-heading h2 {
+    color: var(--blue);
+    margin: 10px 0;
+}
+
+.fashion-gallery .section-heading p {
+    line-height: 1.7;
+}
+
+/* Carousel layout */
+
+.fashion-carousel {
+    position: relative;
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Portrait viewing area */
+
+.fashion-viewport {
+    width: 100%;
+    max-width: 520px;
+    height: 650px;
+    overflow: hidden;
+    border-radius: 18px;
+    background: var(--sky-blue);
+    border: 1px solid var(--border);
+    box-shadow: 0 10px 30px rgba(21, 52, 81, 0.13);
+}
+
+/* Moving slideshow track */
+
+.fashion-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s ease-in-out;
+}
+
+/* Each portrait slide */
+
+.fashion-slide {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+    background: #ffffff;
+}
+
+/* Complete image without cropping */
+
+.fashion-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 12px;
+}
+
+/* Previous and next arrows */
+
+.gallery-arrow {
+    flex: 0 0 48px;
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    background: var(--navy);
+    color: #ffffff;
+    font-size: 34px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(21, 52, 81, 0.18);
+    transition: 0.3s;
+}
+
+.gallery-arrow:hover {
+    background: var(--blue);
+    transform: scale(1.08);
+}
+
+/* Navigation dots */
+
+.fashion-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.fashion-dot {
+    width: 12px;
+    height: 12px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: #CAD5E0;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.fashion-dot.active {
+    width: 30px;
+    border-radius: 20px;
+    background: var(--blue);
+}
+
+/* Portrait carousel on tablets */
+
+@media (max-width: 768px) {
+
+    .fashion-gallery {
+        padding: 50px 15px;
+    }
+
+    .fashion-carousel {
+        gap: 8px;
+    }
+
+    .fashion-viewport {
+        height: 540px;
+        max-width: 440px;
+        border-radius: 14px;
+    }
+
+    .gallery-arrow {
+        flex-basis: 38px;
+        width: 38px;
+        height: 38px;
+        font-size: 27px;
+    }
+
+}
+
+/* Portrait carousel on phones */
+
+@media (max-width: 500px) {
+
+    .fashion-gallery {
+        padding: 45px 10px;
+    }
+
+    .fashion-carousel {
+        gap: 5px;
+    }
+
+    .fashion-viewport {
+        height: 470px;
+        max-width: 100%;
+        border-radius: 12px;
+    }
+
+    .fashion-slide {
+        padding: 7px;
+    }
+
+    .gallery-arrow {
+        flex-basis: 32px;
+        width: 32px;
+        height: 32px;
+        font-size: 23px;
+    }
+
+}
+
+/* ABOUT US FASHION VIDEO SHOWCASE */
+
+.fashion-showcase {
+    position: relative;
+    width: 100%;
+    height: 480px;
+    overflow: hidden;
+    background: #172b4d;
+}
+
+.fashion-showcase video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.fashion-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 25px;
+    color: white;
+    background: rgba(15, 25, 45, 0.35);
+}
+
+.fashion-overlay h2 {
+    max-width: 750px;
+    font-size: clamp(28px, 4vw, 48px);
+    margin: 12px 0;
+}
+
+.fashion-overlay p {
+    max-width: 650px;
+}
+
+@media (max-width: 600px) {
+    .fashion-showcase {
+        height: 350px;
+    }
+}
+/* ABOUT PAGE FASHION VIDEO */
+
+.fashion-video-banner {
+    position: relative;
+    width: 100%;
+    height: 480px;
+    overflow: hidden;
+    border-radius: 18px;
+    margin: 30px auto;
+    background: #172b4d;
+}
+
+.fashion-video-banner video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.fashion-video-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.35);
+    text-align: center;
+}
+
+.fashion-sliding-text {
+    width: 100%;
+    padding: 20px;
+    animation: fashionSlide 12s ease-in-out infinite;
+}
+
+.fashion-sliding-text h2 {
+    color: #ffffff;
+    font-size: clamp(25px, 4vw, 46px);
+    font-weight: 800;
+    text-shadow: 2px 3px 12px rgba(0, 0, 0, 0.8);
+    margin: 18px 0;
+}
+
+@keyframes fashionSlide {
+    0%, 10% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    20%, 70% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    90%, 100% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .fashion-video-banner {
+        height: 350px;
+    }
+}
+/* ==========================================
+   TOBI CAREERS - PROFESSIONAL JOBS PAGE
+========================================== */
+
+/* MAIN VIDEO HERO */
+
+.jobs-video-hero {
+    position: relative;
+    height: 570px;
+    overflow: hidden;
+    background: var(--navy);
+}
+
+.jobs-main-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.jobs-video-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(
+        90deg,
+        rgba(12, 30, 48, 0.85),
+        rgba(12, 30, 48, 0.50),
+        rgba(12, 30, 48, 0.12)
+    );
+}
+
+.jobs-hero-content {
+    width: 90%;
+    max-width: 1150px;
+    margin: auto;
+    color: white;
+}
+
+.jobs-eyebrow {
+    display: inline-block;
+    color: white;
+    background: rgba(57, 131, 198, 0.8);
+    padding: 9px 16px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.jobs-hero-content h1 {
+    color: white;
+    font-size: clamp(38px, 5vw, 62px);
+    line-height: 1.15;
+    margin-bottom: 20px;
+    text-shadow: 2px 3px 8px rgba(0,0,0,0.5);
+}
+
+.jobs-hero-content > p {
+    max-width: 650px;
+    color: white;
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.jobs-hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.jobs-hero-note {
+    margin-top: 25px;
+    font-size: 13px;
+    color: white;
+    font-weight: bold;
+}
+
+
+/* VIDEO GALLERY */
+
+.jobs-video-gallery {
+    padding: 75px 0;
+    background: var(--soft-pink);
+}
+
+.jobs-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.jobs-gallery-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: 0 8px 25px rgba(21,52,81,0.07);
+    transition: 0.3s;
+}
+
+.jobs-gallery-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 14px 30px rgba(21,52,81,0.14);
+}
+
+.jobs-gallery-video {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+    background: var(--navy);
+}
+
+.jobs-gallery-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.jobs-video-number {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: var(--pink);
+    color: var(--navy);
+    font-weight: bold;
+    padding: 7px 12px;
+    border-radius: 7px;
+    font-size: 13px;
+}
+
+.jobs-gallery-info {
+    padding: 20px;
+}
+
+.jobs-gallery-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--sky-blue);
+    color: var(--blue);
+    border-radius: 12px;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.jobs-gallery-info h3 {
+    color: var(--navy);
+    font-size: 17px;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.jobs-gallery-info p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.7;
+    min-height: 105px;
+}
+
+.jobs-gallery-info a {
+    display: inline-block;
+    color: var(--blue);
+    font-weight: bold;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+
+/* VACANCIES SECTION */
+
+.jobs-vacancies-section {
+    padding: 75px 0;
+    background: white;
+}
+
+.jobs-filter-card {
+    max-width: 850px;
+    margin: 0 auto 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.jobs-filter-card .form-group {
+    margin-bottom: 0;
+}
+
+.jobs-filter-card #jobCount {
+    grid-column: 1 / -1;
+    color: var(--blue);
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.jobs-listings-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 23px;
+    align-items: start;
+}
+
+.jobs-listings-grid .job-card[hidden] {
+    display: none !important;
+}
+
+.jobs-listings-grid #noJobsMessage {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 30px;
+    color: var(--muted);
+    background: var(--sky-blue);
+    border-radius: 12px;
+}
+
+.jobs-listings-grid #noJobsMessage[hidden] {
+    display: none;
+}
+
+.jobs-listings-grid .job-card {
+    margin: 0;
+    padding: 23px;
+    border-radius: 14px;
+    box-shadow: 0 7px 23px rgba(21,52,81,0.06);
+    transition: 0.3s;
+}
+
+.jobs-listings-grid .job-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--blue);
+    box-shadow: 0 12px 30px rgba(21,52,81,0.12);
+}
+
+.job-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.job-card-top > i {
+    color: var(--blue);
+    font-size: 25px;
+}
+
+.job-category {
+    background: var(--sky-blue);
+    color: var(--navy);
+    padding: 6px 11px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.jobs-listings-grid .job-card h3 {
+    font-size: 19px;
+    line-height: 1.4;
+}
+
+.jobs-listings-grid .job-card > p:not(.job-meta) {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.job-information {
+    padding: 15px;
+    background: var(--soft-pink);
+    border-radius: 9px;
+    margin: 18px 0;
+}
+
+.job-information p {
+    font-size: 12px;
+    margin-bottom: 9px;
+    line-height: 1.6;
+}
+
+.job-information p:last-child {
+    margin-bottom: 0;
+}
+
+.job-information i {
+    color: var(--blue);
+    width: 20px;
+}
+
+.job-details {
+    margin-bottom: 20px;
+    border-top: 1px solid var(--border);
+    padding-top: 15px;
+}
+
+.job-details summary {
+    color: var(--blue);
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.job-details h4 {
+    color: var(--navy);
+    font-size: 14px;
+    margin: 15px 0 7px;
+}
+
+.job-details ul {
+    padding-left: 20px;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+.job-apply-button {
+    display: block;
+    width: 100%;
+}
+
+.jobs-salary-notice {
+    margin-top: 35px;
+    padding: 18px;
+    border-radius: 10px;
+    background: var(--yellow);
+    color: var(--navy);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.jobs-salary-notice i {
+    margin-right: 7px;
+}
+
+
+/* EMPLOYEE BENEFITS */
+
+.jobs-benefits-section {
+    padding: 75px 0;
+    background: var(--sky-blue);
+}
+
+.jobs-benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.jobs-benefit-card {
+    background: white;
+    padding: 28px;
+    border-radius: 13px;
+    text-align: center;
+    border-bottom: 4px solid var(--pink);
+    transition: 0.3s;
+}
+
+.jobs-benefit-card:hover {
+    transform: translateY(-5px);
+}
+
+.jobs-benefit-card > i {
+    width: 65px;
+    height: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 17px;
+    border-radius: 50%;
+    background: var(--pink);
+    color: var(--navy);
+    font-size: 26px;
+}
+
+.jobs-benefit-card h3 {
+    color: var(--navy);
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.jobs-benefit-card p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+
+/* APPLICANT REQUIREMENTS */
+
+.jobs-requirements-section {
+    padding: 75px 0;
+    background: white;
+}
+
+.jobs-requirements-content {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 30px;
+    padding: 40px;
+    background: var(--soft-pink);
+    border-radius: 18px;
+    border: 1px solid var(--pink);
+}
+
+.jobs-requirements-icon {
+    width: 85px;
+    height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--yellow);
+    color: var(--navy);
+    border-radius: 20px;
+    font-size: 38px;
+}
+
+.jobs-requirements-content h2 {
+    color: var(--navy);
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+.jobs-requirements-content > div > p:not(.eyebrow) {
+    color: var(--muted);
+    margin-bottom: 22px;
+}
+
+.jobs-requirements-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.jobs-requirements-grid div {
+    font-size: 14px;
+    color: var(--text);
+}
+
+.jobs-requirements-grid i {
+    color: var(--blue);
+    margin-right: 8px;
+}
+
+
+/* FINAL CALL TO ACTION */
+
+.jobs-final-cta {
+    padding: 65px 20px;
+    text-align: center;
+    background: var(--navy);
+    color: white;
+}
+
+.jobs-final-cta > i {
+    font-size: 42px;
+    color: var(--yellow);
+    margin-bottom: 18px;
+}
+
+.jobs-final-cta h2 {
+    color: white;
+    font-size: 32px;
+    margin-bottom: 13px;
+}
+
+.jobs-final-cta p {
+    color: #DCE8F3;
+    max-width: 650px;
+    margin: 0 auto 25px;
+}
+
+.jobs-final-cta .btn {
+    display: inline-block;
+}
+
+
+/* RESPONSIVE TABLET */
+
+@media (max-width: 950px) {
+
+    .jobs-gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .jobs-listings-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .jobs-benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .jobs-hero-content {
+        width: 92%;
+    }
+
+}
+
+
+/* RESPONSIVE MOBILE */
+
+@media (max-width: 600px) {
+
+    .jobs-video-hero {
+        height: 530px;
+    }
+
+    .jobs-hero-content h1 {
+        font-size: 36px;
+    }
+
+    .jobs-hero-content > p {
+        font-size: 14px;
+    }
+
+    .jobs-hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .jobs-gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .jobs-gallery-video {
+        height: 260px;
+    }
+
+    .jobs-gallery-info {
+        padding: 13px;
+    }
+
+    .jobs-gallery-info h3 {
+        font-size: 14px;
+    }
+
+    .jobs-gallery-info p {
+        font-size: 12px;
+        min-height: 135px;
+    }
+
+    .jobs-listings-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .jobs-filter-card {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    .jobs-benefits-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .jobs-benefit-card {
+        padding: 18px 12px;
+    }
+
+    .jobs-requirements-content {
+        grid-template-columns: 1fr;
+        padding: 24px;
+    }
+
+    .jobs-requirements-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .jobs-final-cta h2 {
+        font-size: 25px;
+    }
+
+}
+
+
+/* VERY SMALL SCREENS */
+
+@media (max-width: 380px) {
+
+    .jobs-gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .jobs-gallery-video {
+        height: 380px;
+    }
+
+    .jobs-gallery-info p {
+        min-height: auto;
+    }
+
+    .jobs-benefits-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* ==================================================
+   TOBI CAREERS - HOMEPAGE REDESIGN
+   New homepage layout, video and automatic slideshow
+================================================== */
+
+/* HERO SECTION */
+
+.hero {
+    display: block;
+    width: 100%;
+    min-height: auto;
+    padding: 75px 0 45px;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.62),
+            rgba(0, 0, 0, 0.28),
+            rgba(0, 0, 0, 0.12)
+        ),
+        url("images/background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 45px;
+    width: 90%;
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+.hero-text {
+    min-width: 0;
+    text-align: left;
+}
+
+.hero-slideshow {
+    position: relative;
+    width: 100%;
+    min-height: 240px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.hero-slide {
+    width: 100%;
+}
+
+.hero-slide h1 {
+    max-width: 650px;
+    overflow-wrap: break-word;
+}
+
+.hero-slide p {
+    max-width: 600px;
+}
+
+.hero-actions {
+    margin-top: 20px;
+}
+
+.hero-card {
+    width: 100%;
+    max-width: 410px;
+    justify-self: end;
+    padding: 32px;
+    border-radius: 18px;
+    background: #FFFFFF;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.20);
+}
+
+.hero-card h2 {
+    line-height: 1.4;
+}
+
+.hero-card p {
+    line-height: 1.8;
+}
+
+
+/* JOB SEARCH BAR */
+
+.hero-search-container {
+    width: 90%;
+    max-width: 1150px;
+    margin: 35px auto 0;
+}
+
+.hero-search {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 24px;
+    background: rgba(255, 255, 255, 0.98);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+.job-search-form {
+    display: grid;
+    grid-template-columns: 1.2fr 0.9fr 1.2fr auto;
+    gap: 15px;
+    align-items: end;
+}
+
+.job-search-form button {
+    min-height: 48px;
+}
+
+
+/* CAREER VIDEO SECTION */
+
+.job-video-section {
+    width: 100%;
+    padding: 75px 0;
+    background: #FFFFFF;
+}
+
+.job-video-heading {
+    max-width: 800px;
+    margin: 0 auto 30px;
+    text-align: center;
+}
+
+.job-video-heading .eyebrow {
+    color: var(--blue);
+}
+
+.job-video-heading h2 {
+    color: var(--navy);
+    font-size: clamp(25px, 3.5vw, 36px);
+    line-height: 1.3;
+    margin-bottom: 12px;
+}
+
+.job-video-heading p:last-child {
+    color: var(--muted);
+    font-size: 15px;
+}
+
+.job-video-frame {
+    width: 100%;
+    max-width: 1050px;
+    margin: 0 auto;
+    overflow: hidden;
+    background: #101010;
+    border-radius: 16px;
+    box-shadow: 0 12px 35px rgba(21, 52, 81, 0.16);
+}
+
+.job-video-frame video {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    max-height: 620px;
+    object-fit: contain;
+    background: #101010;
+}
+
+.job-video-caption {
+    max-width: 800px;
+    margin: 18px auto 0;
+    text-align: center;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+
+/* CAREER MESSAGE */
+
+.career-message {
+    max-width: 900px;
+    margin: 0 auto 40px;
+    padding: 35px;
+    text-align: center;
+    background: linear-gradient(
+        120deg,
+        var(--sky-blue),
+        var(--soft-pink)
+    );
+    border-radius: 16px;
+    border-left: 5px solid var(--blue);
+}
+
+.career-message h2 {
+    color: var(--navy);
+    font-size: 27px;
+    margin-bottom: 12px;
+}
+
+.career-message h3 {
+    color: var(--blue);
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.career-message p {
+    max-width: 750px;
+    margin: auto;
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+
+/* FASHION PORTRAIT SLIDESHOW */
+
+.fashion-gallery {
+    width: 100%;
+    padding: 75px 0;
+    background: var(--soft-pink);
+}
+
+.fashion-gallery .section-heading {
+    margin-bottom: 35px;
+}
+
+.fashion-gallery .section-heading h2 {
+    color: var(--navy);
+}
+
+.fashion-carousel {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 65px;
+}
+
+.fashion-viewport {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    height: 590px;
+    overflow: hidden;
+    border-radius: 18px;
+    background: #FFFFFF;
+    box-shadow: 0 12px 35px rgba(21, 52, 81, 0.16);
+}
+
+.fashion-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.75s ease-in-out;
+    will-change: transform;
+}
+
+.fashion-slide {
+    position: relative;
+    inset: auto;
+    display: flex;
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+    min-width: 100%;
+    opacity: 1;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF;
+}
+
+.fashion-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    background: #FFFFFF;
+}
+
+
+/* SLIDESHOW ARROWS */
+
+.gallery-arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 5;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 50%;
+    background: var(--navy);
+    color: #FFFFFF;
+    font-size: 32px;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.18);
+    transition: 0.3s;
+}
+
+.gallery-arrow:hover {
+    background: var(--blue);
+    transform: translateY(-50%) scale(1.08);
+}
+
+.gallery-prev {
+    left: 0;
+}
+
+.gallery-next {
+    right: 0;
+}
+
+
+/* SLIDESHOW DOTS */
+
+.fashion-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.fashion-dot {
+    width: 12px;
+    height: 12px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: #B7C8D9;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.fashion-dot.active {
+    width: 30px;
+    border-radius: 20px;
+    background: var(--blue);
+}
+
+.fashion-auto-caption {
+    text-align: center;
+    color: var(--muted);
+    margin-top: 15px;
+    font-size: 13px;
+}
+
+
+/* TABLET HOMEPAGE LAYOUT */
+
+@media (max-width: 950px) {
+
+    .hero {
+        padding: 55px 0 40px;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .hero-text {
+        text-align: center;
+    }
+
+    .hero-slideshow {
+        min-height: 200px;
+    }
+
+    .hero-slide h1 {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-slide p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-actions {
+        justify-content: center;
+    }
+
+    .hero-card {
+        max-width: 600px;
+        justify-self: center;
+    }
+
+    .hero-search-container {
+        margin-top: 30px;
+    }
+
+    .job-search-form {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+
+/* MOBILE HOMEPAGE LAYOUT */
+
+@media (max-width: 650px) {
+
+    .hero {
+        padding: 45px 0 35px;
+        background-position: center;
+    }
+
+    .hero-content {
+        width: 92%;
+        gap: 25px;
+    }
+
+    .hero-slideshow {
+        min-height: 190px;
+    }
+
+    .hero-slide h1 {
+        font-size: 34px;
+    }
+
+    .hero-slide p {
+        font-size: 14px;
+    }
+
+    .hero-card {
+        padding: 25px;
+    }
+
+    .hero-search-container {
+        width: 92%;
+        margin-top: 25px;
+    }
+
+    .hero-search {
+        padding: 17px;
+    }
+
+    .job-search-form {
+        grid-template-columns: 1fr;
+    }
+
+    .job-search-form button {
+        width: 100%;
+    }
+
+    .job-video-section {
+        padding: 50px 0;
+    }
+
+    .job-video-frame {
+        border-radius: 10px;
+    }
+
+    .career-message {
+        padding: 25px 18px;
+    }
+
+    .career-message h2 {
+        font-size: 23px;
+    }
+
+    .career-message h3 {
+        font-size: 14px;
+    }
+
+    .fashion-gallery {
+        padding: 50px 0;
+    }
+
+    .fashion-carousel {
+        padding: 0 42px;
+    }
+
+    .fashion-viewport {
+        height: 480px;
+        border-radius: 12px;
+    }
+
+    .gallery-arrow {
+        width: 38px;
+        height: 38px;
+        font-size: 26px;
+    }
+
+    .fashion-dots {
+        margin-top: 20px;
+    }
+
+}
+
+
+/* SMALL PHONE SCREENS */
+
+@media (max-width: 380px) {
+
+    .hero-slide h1 {
+        font-size: 29px;
+    }
+
+    .hero-card {
+        padding: 20px;
+    }
+
+    .fashion-carousel {
+        padding: 0 35px;
+    }
+
+    .fashion-viewport {
+        height: 410px;
+    }
+
+}
+
+
+
+
+/* =====================================
+   TOBI CAREERS - NEW HOMEPAGE DESIGN
+===================================== */
+
+/* LOGO AND NAVIGATION */
+.site-header {
+    position: relative;
+    z-index: 100;
+    background: #153451;
+    padding: 12px 5%;
+}
+
+.site-header .header-content {
+    max-width: 1250px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.site-header .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: white;
+    font-size: 21px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.site-header .logo img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    border-radius: 50%;
+    background: white;
+}
+
+.site-header nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.site-header nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.site-header nav a:hover,
+.site-header nav a.active {
+    color: #F9DCE8;
+}
+
+.menu-toggle {
+    display: none;
+    background: transparent;
+    color: white;
+    border: none;
+    font-size: 27px;
+    cursor: pointer;
+}
+
+
+/* VIDEO HERO SECTION */
+.home-hero {
+    position: relative;
+    min-height: 620px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: #153451;
+    color: white;
+}
+
+.home-hero .hero-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
+}
+
+.home-hero .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(10, 30, 48, 0.88),
+        rgba(10, 30, 48, 0.48),
+        rgba(10, 30, 48, 0.18)
+    );
+    z-index: 1;
+}
+
+.home-hero .hero-content {
+    position: relative;
+    z-index: 2;
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 100px 0;
+}
+
+.hero-label,
+.section-label {
+    color: #F9DCE8;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+}
+
+.home-hero .hero-content h1 {
+    max-width: 760px;
+    font-size: clamp(38px, 5.5vw, 68px);
+    line-height: 1.12;
+    margin-bottom: 22px;
+    color: white;
+}
+
+.home-hero .hero-description {
+    max-width: 620px;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #F4F7FA;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 25px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: #3983C6;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #24679F;
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    border: 2px solid white;
+    color: white;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: #153451;
+}
+
+.hero-scroll {
+    position: absolute;
+    bottom: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: white;
+}
+
+
+/* PORTRAIT SECTION */
+.portrait-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 55px;
+    max-width: 1150px;
+    width: 90%;
+    margin: 85px auto;
+}
+
+.portrait-image {
+    height: 480px;
+    background: #E8F4FF;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.portrait-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.portrait-content h2 {
+    color: #153451;
+    font-size: clamp(28px, 4vw, 42px);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.portrait-content p {
+    color: #526273;
+    font-size: 16px;
+    line-height: 1.9;
+    margin-bottom: 20px;
+}
+
+.portrait-content .section-label {
+    color: #3983C6;
+}
+
+
+/* SECTION HEADINGS */
+.section-heading {
+    max-width: 750px;
+    margin: 0 auto 45px;
+    text-align: center;
+    padding: 0 15px;
+}
+
+.section-heading .section-label {
+    color: #3983C6;
+}
+
+.section-heading h2 {
+    color: #153451;
+    font-size: clamp(28px, 4vw, 40px);
+    margin-bottom: 15px;
+}
+
+.section-heading p {
+    color: #667788;
+    line-height: 1.8;
+}
+
+
+/* OPPORTUNITY CARDS */
+.opportunities-section {
+    background: #E8F4FF;
+    padding: 85px 5%;
+}
+
+.opportunities-grid {
+    max-width: 1150px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.opportunity-card {
+    background: white;
+    padding: 35px 28px;
+    border-radius: 12px;
+    box-shadow: 0 6px 22px rgba(21, 52, 81, 0.08);
+    transition: 0.3s;
+}
+
+.opportunity-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 28px rgba(21, 52, 81, 0.13);
+}
+
+.card-icon {
+    font-size: 38px;
+    margin-bottom: 20px;
+}
+
+.opportunity-card h3 {
+    color: #153451;
+    margin-bottom: 14px;
+    font-size: 21px;
+}
+
+.opportunity-card p {
+    color: #667788;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.opportunity-card a {
+    color: #3983C6;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+
+/* AUTOMATIC GALLERY */
+.home-gallery {
+    padding: 85px 5%;
+    overflow: hidden;
+}
+
+.gallery-viewport {
+    max-width: 900px;
+    width: 100%;
+    height: 480px;
+    overflow: hidden;
+    margin: auto;
+    border-radius: 14px;
+    background: #E8F4FF;
+}
+
+.gallery-track {
+    display: flex;
+    height: 100%;
+    transition: transform 0.8s ease-in-out;
+}
+
+.gallery-slide {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+}
+
+.gallery-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.gallery-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+.gallery-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #CBD7E2;
+    display: inline-block;
+}
+
+.gallery-dot.active {
+    background: #3983C6;
+}
+
+
+/* FINAL CALL TO ACTION */
+.home-cta {
+    background: linear-gradient(120deg, #153451, #3983C6);
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.home-cta .section-label {
+    color: #F9DCE8;
+}
+
+.home-cta h2 {
+    font-size: clamp(28px, 4vw, 42px);
+    margin-bottom: 18px;
+}
+
+.home-cta p {
+    max-width: 650px;
+    margin: 0 auto 25px;
+    line-height: 1.8;
+    color: #F0F5FA;
+}
+
+
+/* FOOTER */
+.site-footer {
+    background: #10283D;
+    color: white;
+    padding: 55px 7% 20px;
+}
+
+.site-footer .footer-content {
+    max-width: 1150px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.site-footer h3,
+.site-footer h4 {
+    color: white;
+    margin-bottom: 18px;
+}
+
+.site-footer p {
+    color: #D4DFE8;
+    line-height: 1.8;
+    max-width: 380px;
+}
+
+.site-footer .footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.site-footer .footer-links a {
+    color: #D4DFE8;
+    text-decoration: none;
+}
+
+.site-footer .footer-links a:hover {
+    color: #F9DCE8;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.15);
+    text-align: center;
+    margin-top: 35px;
+    padding-top: 20px;
+}
+
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 850px) {
+
+    .site-header nav {
+        gap: 12px;
+    }
+
+    .site-header nav a {
+        font-size: 12px;
+    }
+
+    .portrait-section {
+        gap: 30px;
+    }
+
+    .opportunities-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+
+    .site-header .header-content {
+        flex-wrap: wrap;
+    }
+
+    .site-header .logo img {
+        width: 42px;
+        height: 42px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .site-header nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 0;
+    }
+
+    .site-header nav.show {
+        display: flex;
+    }
+
+    .site-header nav a {
+        font-size: 15px;
+        padding: 8px 0;
+    }
+
+    .home-hero {
+        min-height: 550px;
+    }
+
+    .home-hero .hero-content {
+        padding: 75px 0;
+    }
+
+    .home-hero .hero-description {
+        font-size: 15px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .portrait-section {
+        grid-template-columns: 1fr;
+        margin: 55px auto;
+    }
+
+    .portrait-image {
+        height: 400px;
+    }
+
+    .opportunities-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-viewport {
+        height: 350px;
+    }
+
+    .site-footer .footer-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
+
+
